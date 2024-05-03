@@ -1,10 +1,33 @@
 import styles from "../styles/SignUpModal.module.css";
 import { useState } from "react";
+import { useDispatch, useSelector } from 'react-redux';
+import { login, logout } from '../reducers/user';
+
 
 function SignUpModal({ setIsOpen }) {
+
+  const dispatch = useDispatch();
+
   const [signUpFirstname, setSignUpFirstname] = useState("");
   const [signUpUsername, setSignUpUsername] = useState("");
   const [signUpPassword, setSignUpPassword] = useState("");
+
+
+  const handleRegister = () => {
+		fetch('http://localhost:3000/users/signup', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({ username: signUpUsername, password: signUpPassword, firstname: signUpFirstname }),
+		}).then(response => response.json())
+			.then(data => {
+				if (data.result) {
+					dispatch(login({username: signUpUsername, token: data.newUser.token, firstname : signUpFirstname})); // connexion en vous appuyant sur la présence ou non du token dans le store.
+					setSignUpUsername('');
+					setSignUpPassword('');
+				}
+			});
+	};
+
 
   return (
     <div className={styles.modalOverlay}>
@@ -18,7 +41,7 @@ function SignUpModal({ setIsOpen }) {
             type="text"
             placeholder="firstname"
             id="signUpFirstname"
-            onChange={(e) => setSignUpFirstname(e.target.value)}
+            onChange={(e) => setSignUpFirstname(e.target.value)} // réinitialisation de la valeur (setfirstname) avec l'input de l'utilisateur 
             value={signUpFirstname}
           />
           <input
@@ -39,7 +62,7 @@ function SignUpModal({ setIsOpen }) {
           />
           <button
             className={styles.signupButton}
-            onClick={() => setIsOpen(true)}
+            onClick={() => handleRegister()}
           >
             Sign up
           </button>

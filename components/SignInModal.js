@@ -5,6 +5,21 @@ function SignInModal({ SetSignInIsOpen }) {
   const [signInUsername, setSignIpUsername] = useState("");
   const [signInPassword, setSignIpPassword] = useState("");
 
+  const handleConnection = () => {
+		fetch('http://localhost:3000/users/signin', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({ username: signInUsername, password: signInPassword }),
+		}).then(response => response.json())
+			.then(data => {
+				if (data.result) {
+					dispatch(login({username: signInUsername, token: data.token})); // connexion en vous appuyant sur la présence ou non du token dans le store.
+					setSignInUsername('');
+					setSignInPassword('');
+				}
+			});
+	};
+
   return (
     <div className={styles.modalOverlay}>
       <div className={styles.modalContent}>
@@ -30,7 +45,7 @@ function SignInModal({ SetSignInIsOpen }) {
             />
             <button
               className={styles.signinButton}
-              onClick={() => SetSignInIsOpen(true)}
+              onClick={() => handleConnection()}
             >
               Sign in
             </button>

@@ -7,6 +7,7 @@ function Home() {
   
   const [isOpen, setIsOpen] = useState(false);
   const [SignInIsOpen, SetSignInIsOpen] = useState(false)
+  
 
   return (
     <div className={styles.splitBackground}>

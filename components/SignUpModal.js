@@ -24,6 +24,8 @@ function SignUpModal({ setIsOpen }) {
 					dispatch(login({username: signUpUsername, token: data.newUser.token, firstname : signUpFirstname})); // connexion en vous appuyant sur la présence ou non du token dans le store.
 					setSignUpUsername('');
 					setSignUpPassword('');
+          setSignUpFirstname('')
+          window.location.assign("main")
 				}
 			});
 	};

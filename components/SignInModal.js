@@ -1,5 +1,7 @@
 import styles from "../styles/SignInModal.module.css";
 import { useState } from "react";
+import { useDispatch, useSelector } from 'react-redux';
+import { login, logout } from '../reducers/user';
 
 function SignInModal({ SetSignInIsOpen }) {
   const [signInUsername, setSignIpUsername] = useState("");

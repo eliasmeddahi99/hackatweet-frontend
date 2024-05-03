@@ -1,0 +1,9 @@
+.main_page {
+
+   display: grid;
+   grid-template-rows: 100vh ;
+   grid-template-columns: 1fr 3fr 2fr;
+   background-color: #151D26;
+   color: white;
+
+}

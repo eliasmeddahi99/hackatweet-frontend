@@ -1,0 +1,87 @@
+.splitBackground {
+  display:flex;
+  height:100vh;
+  width: 100vw;
+}
+
+.leftHome {
+  display: flex;
+  background-image: url('/background.png');
+  background-size: cover;
+  width: 40%;
+  justify-content: center;
+  align-items: center;
+}
+
+.rightHome {
+  background-color: rgb(21, 31, 43);
+  width:60%;
+  padding:15px;
+}
+
+.largeLogo {
+  height: 50%;
+  transform: rotate(180deg);
+}
+
+
+.logo {
+  height: 10%;
+  transform: rotate(180deg);
+}
+
+.title {
+  line-height: 1.15;
+  font-size: 3.5rem;
+  color:white;
+  width: 50%;
+  font-size: bold;
+  font-family:montheavy;
+}
+
+.subtitle {
+  font-size:bold;
+  font-size: 1.3rem;
+  color: white;
+  width: 40%;
+  font-family:montheavy;
+}
+
+.buttons {
+  display:flex;
+  flex-direction: column;
+  width: 40%;
+}
+
+.signupButton {
+  padding: 10px 20px;
+  width:65%;
+  margin:10px;
+  font-size: 16px;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  outline: none;
+  background-color: rgb(24, 140, 216);
+}
+
+.signinButton {
+  width: 65%;
+  padding: 10px 20px;
+  margin:10px;
+  font-size: 16px;
+  color:#2683EE;
+  border: 2px solid rgb(98, 106, 118);
+  border-radius: 15px;
+  cursor: pointer;
+  background-color: inherit;  
+}
+
+.accountTitle {
+  color:white;
+  padding: 0px 20px;
+  font-family:montheavy;
+  font-size: 0.9rem;
+}
+

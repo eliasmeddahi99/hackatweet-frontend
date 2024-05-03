@@ -1,6 +1,13 @@
 import styles from "../styles/Home.module.css";
+import SignUpModal from "./SignUpModal"
+import SignInModal from "./SignInModal"
+import { useState } from 'react';
 
 function Home() {
+  
+  const [isOpen, setIsOpen] = useState(false);
+  const [SignInIsOpen, SetSignInIsOpen] = useState(false)
+
   return (
     <div className={styles.splitBackground}>
       <div className={styles.leftHome}>
@@ -13,17 +20,19 @@ function Home() {
         <div className={styles.buttons}>
           <button
             className={styles.signupButton}
-            onClick={() => handleLogout()}
+            onClick={() => setIsOpen(true)}
           >
             Sign up
           </button>
+          {isOpen && <SignUpModal setIsOpen={setIsOpen} />}
           <p className={styles.accountTitle}>Already have an account ?</p>
           <button
             className={styles.signinButton}
-            onClick={() => handleLogout()}
+            onClick={() => SetSignInIsOpen(true)}
           >
             Sign in
           </button>
+          {SignInIsOpen && <SignInModal SetSignInIsOpen={SetSignInIsOpen} />}
         </div>
       </div>
     </div>

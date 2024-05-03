@@ -1,0 +1,91 @@
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.6); /* Fond légèrement plus foncé */
+  }
+
+
+
+.modalContent {
+    background: rgb(21, 31, 43); /* Arrière-plan gris foncé */
+    color: #fff; /* Texte blanc */
+    padding: 20px;
+    height: 50%;
+    width: 40%; /* Largeur fixe pour le modal */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative; /* Pour positionner le bouton de fermeture */
+  }
+
+
+  .modalFlex {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+  
+  .closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    border: none;
+    background: none;
+    color: white; /* Bouton blanc */
+    cursor: pointer;
+  }
+  
+  .submitButton {
+    width: 100%;
+    background: rgb(21, 31, 43); /* Fond du bouton */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px; /* Coins arrondis pour le bouton */
+    cursor: pointer;
+    transition: background-color 0.3s; /* Transition pour l'effet hover */
+    border:white 1px solid;
+    margin:10px;
+    padding:10px;
+  }
+  
+  
+  .submit-button:hover {
+    background-color: #777; /* Changement de couleur au survol */
+  }
+  
+  .inputButtons {
+    align-items: center;
+    display:flex;
+    flex-direction: column;
+  }
+  
+  .logo {
+    width: 20%;
+  }
+  
+  .text {
+    text-align: center;
+    font-family:montheavy;
+  }
+  
+
+.signinButton {
+    width: 100%;
+    padding: 10px 20px;
+    margin:10px;
+    font-size: 16px;
+    color:#2683EE;
+    border: 2px solid rgb(98, 106, 118);
+    border-radius: 15px;
+    cursor: pointer;
+    background-color: white;  
+  }
+  
